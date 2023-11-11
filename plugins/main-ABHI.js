@@ -1,6 +1,6 @@
 let handler = async m => m.reply(`
 
-≡  *𝙰𝙱𝙷𝙸𝚂𝙷𝙴𝙺-𝚂𝙴𝚁*   GROUPS
+≡  *Asistente*   GRUPO
 ▢ Join Public Bot Group And Support
 https://chat.whatsapp.com/BOLb0ICN3sAJ5dloRBw5VD
 ─────────────
