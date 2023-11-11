@@ -3,7 +3,7 @@ let handler = async (m, {conn, usedPrefix}) => {
 	
     let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let user = global.db.data.users[who]
-    if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+    if (!(who in global.db.data.users)) throw `✳️ No se encuentra el usuario en mi database`
     conn.reply(m.chat, `
 ┌───⊷ *BALANCE* ⊶
 ▢ *📌Number* : _@${who.split('@')[0]}_
