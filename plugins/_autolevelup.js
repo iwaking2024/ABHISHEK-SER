@@ -12,12 +12,12 @@ export async function before(m, { conn }) {
     if (before !== user.level) {
         m.reply(`
 ╭────────────
-│   *Congratulations* 
-│      *Level Up🥳*
+│   **Felicidades** 
+│      *Sube de nivel🥳*
 │
 │ *📍Level* *${before}* ‣  *${user.level}*
 │ *🐉Role*: *${user.role}*
-│ *Have A Good Day🎯*
+│ *Que tenga un buen día🌤️*
 │ _*Type /off autolevelup*_
 │    _*To Deactivate*_
 ╰────────────
