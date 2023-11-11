@@ -4,10 +4,10 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
-    if (!who) throw '✳️ tag the user'
+    if (!who) throw '✳️ etiqueta al usuario'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw '✳️ Enter the amount of *Diamonds* you want to add'
-    if (isNaN(txt)) throw '🔢 only numbers'
+    if (!txt) throw '✳️ Introduzca la cantidad de *Diamantes* que desea añadir'
+    if (isNaN(txt)) throw '🔢 sólo números'
     let dmt = parseInt(txt)
     let diamond = dmt
     
@@ -15,7 +15,7 @@ let handler = async (m, { conn, text }) => {
     let users = global.db.data.users
    users[who].diamond += dmt
 
-    await m.reply(`≡ *💎 ADDED*
+    await m.reply(`≡ *💎 AGREGADO*
 ┌──────────────
 ▢ *Total:* ${dmt}
 └──────────────`)
