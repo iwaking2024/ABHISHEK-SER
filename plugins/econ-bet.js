@@ -2,7 +2,7 @@ let confirm = {}
 
 async function handler(m, { conn, args }) {
     //if (!isROwner) throw 'Dalam perbaikan'
-    if (m.sender in confirm) throw 'You are still gambling, wait for it to finish!!'
+    if (m.sender in confirm) throw '¡¡Todavía estás apostando, espera a que termine!!'
     try {
         let user = global.db.data.users[m.sender]
         let count = (args[0] && number(parseInt(args[0])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[0]) ? Math.floor(parseInt(user.money)) : 1) * 1
