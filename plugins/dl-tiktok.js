@@ -4,7 +4,7 @@ import { tiktokdl, tiktokdlv2, tiktokdlv3 } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, text, args, usedPrefix, command}) => {
 if (!args[0]) throw `🎯 Enter A Tiktok Link\n\n 📌 Example : ${usedPrefix + command} https://vm.tiktok.com/ZMNqyusVD/?k=1`
-if (!args[0].match(/tiktok/gi)) throw `❎ Verify That The Link Is From Tiktok`
+if (!args[0].match(/tiktok/gi)) throw `❎ Verifique que el link sea de Tiktok`
 m.react(rwait)
 
 try {
@@ -22,7 +22,7 @@ try {
          .catch(async _ => await tiktokdlv2(args[0]))
          .catch(async _ => await tiktokdlv3(args[0]))
     const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
-    if (!url) throw '❎ Error Downloading The Video'
+    if (!url) throw '❌ Error en la descarga del vídeo'
      conn.sendFile(m.chat, url, 'fb.mp4', `
 ┌─⊷ *TIKTOK DL*
 ▢ *Username:* ${nickname} ${description ? `\n▢ *Description:* ${description}` : ''}
