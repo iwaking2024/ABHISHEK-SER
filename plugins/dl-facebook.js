@@ -2,12 +2,12 @@ import fg from 'api-dylux';
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    throw `🎯 Please Send The Link Of A Facebook Video\n\n📌 Example :\n*${usedPrefix + command}* Link Here`;
+    throw `🎯 Envíe el link de un vídeo de Facebook\n\n📌 Example :\n*${usedPrefix + command}* Link Aquí`;
   }
 
   const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
   if (!urlRegex.test(args[0])) {
-    throw '⚠️ PLEASE GIVE A VALID URL.';
+    throw '⚠️ POR FAVOR, INDIQUE UNA DIRECCIÓN URL VÁLIDA.';
   }
 
   m.react(rwait);
@@ -27,7 +27,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
     m.react(done);
   } catch (error) {
     console.log(error);
-    m.reply('⚠️ An error occurred while processing the request. Please try again later.');
+    m.reply('⚠️ Se ha producido un error al procesar la solicitud. Vuelva a intentarlo más tarde.');
   }
 };
 
