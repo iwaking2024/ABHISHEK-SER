@@ -3,17 +3,17 @@ import { download } from 'aptoide-scraper';
 let handler = async (m, { conn, usedPrefix: prefix, command, text }) => {
   try {
     if (command === 'apk') {
-      if (!text) throw `🎯Please Provide The *Apk* Name You Want To Download.`;
+      if (!text) throw `🎯Indique el nombre del *Apk* que desea descargar.`;
 
       await conn.reply(m.chat, global.wait, m);
       let data = await download(text);
 
       if (data.size.replace(' MB', '') > 200) {
-        return await conn.sendMessage(m.chat, { text: '*⚠️The File Is Too Large.*' }, { quoted: m });
+        return await conn.sendMessage(m.chat, { text: '*⚠️El archivo es demasiado grande.*' }, { quoted: m });
       }
 
       if (data.size.includes('GB')) {
-        return await conn.sendMessage(m.chat, { text: '*⚠️The File Is Too Large.*' }, { quoted: m });
+        return await conn.sendMessage(m.chat, { text: '*⚠️El archivo es demasiado grande.*' }, { quoted: m });
       }
 
       await conn.sendMessage(
@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix: prefix, command, text }) => {
       );
     }
   } catch {
-    throw `*❌An Error Occurred. Make Sure To Provide A Valid Link.*`;
+    throw `*❌Se ha producido un error. Asegúrese de proporcionar un link válido.*`;
   }
 };
 
