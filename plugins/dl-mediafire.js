@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
 	var limit
      if((isOwner || isPrems)) limit = 1200
      else limit = 100
-   if (!args[0]) throw `*🎯 Enter The Mediafire link next to the command*`
+   if (!args[0]) throw `*🎯 Introduzca el link Mediafire junto al comando*`
     if (!args[0].match(/mediafire/gi)) throw `*❌ Link Incorrect*`
     m.react(rwait)
     let full = /f$/i.test(command)
